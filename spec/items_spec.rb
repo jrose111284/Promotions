@@ -20,7 +20,7 @@ end
     expect(item.has_product?("Lavender heart")).to be(true)
   end
 
-  it "tells if a dish is not available" do
+  it "tells if a product is not available" do
     expect(item.has_product?("playstation")).to be(false)
   end
 
