@@ -19,4 +19,8 @@ class Items
   def has_product?(item)
     !products[item].nil?
   end
+
+  def price(item)
+    products[item]
+  end
 end

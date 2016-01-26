@@ -13,7 +13,6 @@ run
 ```
 irb
 ```
-
 ```
 require './lib/items'
 item = Items.new
@@ -29,7 +28,6 @@ run
 ```
 irb
 ```
-
 ```
 require './lib/items'
 item = Items.new
@@ -40,12 +38,12 @@ The results
 2.2.3 :003 > item.has_product?("playstation")
  => false
  ```
-
-
-
-
-### User stories
-
-As a customer<br>
-Before I select a item<br>
-I would like to see a list of products to buy
+### To check price on a item
+```
+item.price("Lavender heart")
+```
+The results
+```
+2.2.3 :003 > item.price("Lavender heart")
+ => 9.25
+ ```
