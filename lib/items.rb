@@ -15,4 +15,8 @@ class Items
       "%s £%.2f" % [title.to_s.capitalize, price]
     end.join(", ")
   end
+
+  def has_product?(item)
+    !products[item].nil?
+  end
 end
