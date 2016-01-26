@@ -1,0 +1,6 @@
+### instructions
+
+In terminal
+```
+$ bundle
+```
