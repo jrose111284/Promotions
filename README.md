@@ -9,7 +9,7 @@ then run
 $ bundle
 ```
 
-### User stroies
+### User stories
 
 As a customer<br>
 Before I select a item<br>
