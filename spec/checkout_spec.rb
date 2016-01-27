@@ -13,19 +13,18 @@ describe Checkout do
       003 => 19.95
     }
   end
-  # before do
-  #   allow(item).to receive(:has_product?).with(001).and_return(true)
-  #   allow(item).to receive(:has_product?).with(002).and_return(true)
-  #   allow(item).to receive(:has_product?).with(003).and_return(true)
-  #
-  #   allow(item).to receive(:price).with(001.to_sym).and_return(9.25)
-  #   allow(menu).to receive(:price).with(002.to_sym).and_return(45.00)
-  #   allow(menu).to receive(:price).with(003.to_sym).and_return(19.95)
-  # end
+  before do
+    allow(item).to receive(:has_product?).with(001).and_return(true)
+    allow(item).to receive(:has_product?).with(002).and_return(true)
+    allow(item).to receive(:has_product?).with(003).and_return(true)
 
-  it "scans a item" do
-    # checkout.scan(001)
-    expect(checkout.scan(001)).to eq(9.25)
+    allow(item).to receive(:price).with(001).and_return(9.25)
+    allow(item).to receive(:price).with(002).and_return(45.00)
+    allow(item).to receive(:price).with(003).and_return(19.95)
+  end
+
+  it "it initialize with a empty order" do
+    expect(checkout.order).to be_empty
   end
 
 end
