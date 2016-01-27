@@ -1,3 +1,4 @@
+require 'byebug'
 class Checkout
   attr_reader :products, :order
 
@@ -10,8 +11,8 @@ class Checkout
     @order = []
   end
 
-  def scan(item)
-
+  def scan(barcode)
+    @order << products[barcode]
   end
 
 end

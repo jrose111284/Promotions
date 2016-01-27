@@ -1,6 +1,7 @@
 require 'checkout'
 require 'items'
 
+
 describe Checkout do
   subject(:checkout) { described_class.new }
 
@@ -25,6 +26,10 @@ describe Checkout do
 
   it "it initialize with a empty order" do
     expect(checkout.order).to be_empty
+  end
+  it "can scan a barcode" do
+    expect(checkout.scan(001)).to eq([9.25])
+
   end
 
 end

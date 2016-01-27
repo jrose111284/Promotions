@@ -17,7 +17,7 @@ class Items
   end
 
   def has_product?(item)
-    !products[item].nil?
+    products.has_key?(item)
   end
 
   def price(item)
