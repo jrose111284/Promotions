@@ -1,8 +1,9 @@
 require 'byebug'
 class Checkout
-  attr_reader :products, :order
+  attr_reader :products, :order, :item
 
-  def initialize
+  def initialize(item)
+    @item = item
     @products = {
       001 => 9.25,
       002 => 45.00,
@@ -12,6 +13,7 @@ class Checkout
   end
 
   def scan(barcode)
+    fail "#{barcode} is not in products" unless item.has_product?(barcode)
     @order << products[barcode]
   end
 

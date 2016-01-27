@@ -1,6 +1,6 @@
-require 'items'
+require 'item'
 
-describe Items do
+describe Item do
 
   subject(:item) { described_class.new }
 

@@ -1,10 +1,10 @@
 require 'checkout'
-require 'items'
+require 'item'
 
 
 
 describe Checkout do
-  subject(:checkout) { described_class.new }
+  subject(:checkout) { described_class.new(item) }
 
   let(:item) { instance_double("item") }
 
@@ -36,6 +36,11 @@ describe Checkout do
   it "can scan all barcodes" do
     checkout_scan
     expect(checkout.order).to eq([9.25, 45.0, 19.95])
+  end
+
+  it "doesnt allow items to be added that are not there" do
+    allow(item).to receive(:has_product?).with(404).and_return(false)
+    expect { checkout.scan(404)}.to raise_error "404 is not in products"
   end
 
 end
