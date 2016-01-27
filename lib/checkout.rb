@@ -17,4 +17,8 @@ class Checkout
     @order << products[barcode]
   end
 
+  def total
+
+  end
+
 end

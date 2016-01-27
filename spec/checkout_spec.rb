@@ -43,4 +43,10 @@ describe Checkout do
     expect { checkout.scan(404)}.to raise_error "404 is not in products"
   end
 
+  it "calculates the total of order with out promotion rule" do
+    non_promotional
+    total = 54.25
+    expect(checkout.total).to eq(total)
+  end
+
 end
