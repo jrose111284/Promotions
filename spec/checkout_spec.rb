@@ -27,9 +27,20 @@ describe Checkout do
   it "it initialize with a empty order" do
     expect(checkout.order).to be_empty
   end
+
   it "can scan a barcode" do
     expect(checkout.scan(001)).to eq([9.25])
+  end
 
+  it "can scan all barcodes" do
+    checkout_scan
+    expect(checkout.order).to eq([9.25, 45.0, 19.95])
   end
 
 end
+
+  def checkout_scan
+    checkout.scan(001)
+    checkout.scan(002)
+    checkout.scan(003)
+  end
