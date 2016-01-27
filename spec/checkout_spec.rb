@@ -2,6 +2,7 @@ require 'checkout'
 require 'items'
 
 
+
 describe Checkout do
   subject(:checkout) { described_class.new }
 
@@ -38,9 +39,3 @@ describe Checkout do
   end
 
 end
-
-  def checkout_scan
-    checkout.scan(001)
-    checkout.scan(002)
-    checkout.scan(003)
-  end
