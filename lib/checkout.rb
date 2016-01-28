@@ -2,7 +2,7 @@ require 'byebug'
 class Checkout
   attr_reader :products, :order
 
-  def initialize(item)
+  def initialize(item = Item)
     @item = item
     @products = {
       001 => 9.25,
@@ -18,8 +18,9 @@ class Checkout
   end
 
   def total
-
+    @order.inject(:+)
   end
+
   private
   attr_reader :item
 
