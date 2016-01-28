@@ -8,6 +8,6 @@ describe PromotionalRule do
   end
 
   it "does not give discount if less then £60" do
-    expect(promotional_rule.ten_percent_discount(66.00)).to eq(59.40)
+    expect(promotional_rule.ten_percent_discount(60.00)).to eq(60.00)
   end
 end

@@ -1,6 +1,11 @@
 class PromotionalRule
 
   def ten_percent_discount(total)
-    total -= total/10 if total > 60
+     if total > 60
+       total -= total/10
+     else
+       total
+     end
   end
+
 end

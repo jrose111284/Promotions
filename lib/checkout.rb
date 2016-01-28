@@ -1,5 +1,5 @@
-require 'byebug'
 class Checkout
+
   attr_reader :products, :order
 
   def initialize(item = Item)
