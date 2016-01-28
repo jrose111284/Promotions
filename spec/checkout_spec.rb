@@ -1,12 +1,11 @@
 require 'checkout'
 require 'item'
 
-
-
 describe Checkout do
+
   subject(:checkout) { described_class.new(item) }
 
-  let(:item) { instance_double("item") }
+  let(:item) { double(:item) }
 
   let (:products) do
     {
@@ -15,14 +14,11 @@ describe Checkout do
       003 => 19.95
     }
   end
+
   before do
     allow(item).to receive(:has_product?).with(001).and_return(true)
     allow(item).to receive(:has_product?).with(002).and_return(true)
     allow(item).to receive(:has_product?).with(003).and_return(true)
-
-    allow(item).to receive(:price).with(001).and_return(9.25)
-    allow(item).to receive(:price).with(002).and_return(45.00)
-    allow(item).to receive(:price).with(003).and_return(19.95)
   end
 
   it "it initialize with a empty order" do

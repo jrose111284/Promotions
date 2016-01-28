@@ -1,6 +1,6 @@
 require 'byebug'
 class Checkout
-  attr_reader :products, :order, :item
+  attr_reader :products, :order
 
   def initialize(item)
     @item = item
@@ -20,5 +20,7 @@ class Checkout
   def total
 
   end
+  private
+  attr_reader :item
 
 end
